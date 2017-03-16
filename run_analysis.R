@@ -89,5 +89,10 @@ second_dataset <- aggregate(dataSet[,c(1:length(features_of_interest))],
 second_dataset <- merge(second_dataset,activity_labels,by = "activityID")
 dataSet <- merge(dataSet,activity_labels,by = "activityID")
 
+write.table(second_dataset,"tidy_dataset.txt",
+            sep = ",", 
+            col.names = colnames(second_dataset)
+            )
+
 
 
